@@ -1,12 +1,40 @@
 // Actions
 const SET_COUNTRIES = 'countries/countries/SET_COUNTRIES';
+const SET_MAP = 'countries/countries/SET_MAP';
+const SET_FILTER = 'countries/countries/SET_FILTER';
 const COUNTRIES_API_LINK = 'https://restcountries.com/v3.1/all';
 
+// initial state
+const initialState = {
+  countries: [],
+  map: 'Select a continent',
+};
+
+// helper function
+function compare(a, b) {
+  if (a.name.common < b.name.common) {
+    return -1;
+  }
+  if (a.name.common > b.name.common) {
+    return 1;
+  }
+  return 0;
+}
+
 // Reducer
-export default function missionsReducer(state = [], action) {
+export default function missionsReducer(state = initialState, action) {
   switch (action.type) {
     case SET_COUNTRIES:
-      return [...action.payload];
+      return {
+        ...state,
+        countries: action.payload,
+      };
+
+    case SET_MAP:
+      return {
+        ...state,
+        map: action.payload,
+      };
 
     default:
       return state;
@@ -17,6 +45,16 @@ export default function missionsReducer(state = [], action) {
 const setCountriesAction = (countries) => ({
   type: SET_COUNTRIES,
   payload: countries,
+});
+
+const setMapAction = (continent) => ({
+  type: SET_MAP,
+  payload: continent,
+});
+
+const setFilterAction = (continent) => ({
+  type: SET_FILTER,
+  payload: continent,
 });
 
 const fetchCountriesData = () => async (dispatch) => {
@@ -30,19 +68,16 @@ const fetchCountriesData = () => async (dispatch) => {
         },
         currencies: item.currencies,
         capital: item.capital,
-        capitalInfo: item.capitalInfo,
         languages: item.languages,
-        latlng: item.latlng,
         borders: item.borders,
         area: item.area,
-        maps: item.maps,
         population: item.population,
-        timezones: item.timezones,
         continents: item.continents,
         flags: item.flags,
       }));
+      countries.sort(compare);
       dispatch(setCountriesAction(countries));
     });
 };
 
-export { fetchCountriesData };
+export { fetchCountriesData, setMapAction, setFilterAction };
