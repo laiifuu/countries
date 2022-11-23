@@ -3,7 +3,8 @@
 
 <div align="center">
 
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
+
+  <img src="https://user-images.githubusercontent.com/93520178/203661672-538bff13-8797-4d20-9b82-372aa011d464.png" alt="logo" width="140"  height="auto" />
   <br/>
 
 </div>
@@ -22,13 +23,10 @@
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
@@ -114,9 +112,7 @@ To run tests, run the following command: `npm run test`
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
-
-- [ ] **[Add an actual  map and display the country on it]**
+- [ ] **Add an actual  map and display the country on it**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
