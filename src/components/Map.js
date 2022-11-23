@@ -1,4 +1,12 @@
 import { useSelector } from 'react-redux';
+import africa from '../images/afrique.png';
+import europe from '../images/leurope.png';
+import northAmerica from '../images/amerique-du-nord.png';
+import southAmerica from '../images/amerique-du-sud.png';
+import antarctica from '../images/antarctica.png';
+import asia from '../images/asie.png';
+import oceania from '../images/australie.png';
+import worldMap from '../images/carte-du-monde.png';
 
 const Map = () => {
   const state = useSelector((state) => state.countries.map);
@@ -6,29 +14,32 @@ const Map = () => {
 
   switch (state) {
     case 'Africa':
-      continent = <i className="fa-solid fa-earth-africa  fa-10x" />;
+      continent = <img src={africa} alt="African continent" />;
       break;
     case 'Europe':
-      continent = <i className="fa-solid fa-earth-europe  fa-10x" />;
+      continent = <img src={europe} alt="European continent" />;
       break;
     case 'North America':
-      continent = <i className="fa-solid fa-earth-americas  fa-10x" />;
+      continent = <img src={northAmerica} alt="North american continent" />;
       break;
     case 'South America':
-      continent = <i className="fa-solid fa-earth-americas  fa-10x" />;
+      continent = <img src={southAmerica} alt="South american continent" />;
       break;
     case 'Asia':
-      continent = <i className="fa-solid fa-earth-asia  fa-10x" />;
+      continent = <img src={asia} alt="Asian continent" />;
       break;
     case 'Oceania':
-      continent = <i className="fa-solid fa-earth-oceania  fa-10x" />;
+      continent = <img src={oceania} alt="Oceania continent" />;
+      break;
+    case 'Antarctica':
+      continent = <img src={antarctica} alt="Antarctican continent" />;
       break;
     default:
-      continent = <i className="fa-solid fa-globe  fa-10x" />;
+      continent = <img src={worldMap} alt="World Map" />;
       break;
   }
 
-  return <div>{continent}</div>;
+  return <div className="map">{continent}</div>;
 };
 
 export default Map;

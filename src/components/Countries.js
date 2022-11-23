@@ -9,27 +9,18 @@ const Countries = () => {
   if (map !== 'Select a continent') if (countries.length !== 0) filtered = countries.filter((item) => item.continents[0] === map);
 
   return (
-    <ul>
+    <ul className="countries-list">
       {map === 'Select a continent'
-        ? countries.map((country) => (
-          <li key={country.name.common}>
-            <Link to={`/countries/${country.name.common}`}>
-              <img
-                src={country.flags.png}
-                alt={`${country.name.common}'s Flag`}
-              />
-              <span>{country.name.common}</span>
-            </Link>
-          </li>
-        ))
+        ? <h2>No continent selected</h2>
         : filtered.map((country) => (
-          <li key={country.name.common}>
+          <li className="country-item" key={country.name.common}>
             <Link to={`/countries/${country.name.common}`}>
               <img
+                className="flag"
                 src={country.flags.png}
                 alt={`${country.name.common}'s Flag`}
               />
-              <span>{country.name.common}</span>
+              <span className="bold">{country.name.common}</span>
             </Link>
           </li>
         ))}

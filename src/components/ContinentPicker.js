@@ -20,7 +20,7 @@ const ContinentPicker = () => {
 
   return (
     <select name="continents" defaultValue={state} id="continents" onChange={(e) => handleSelect(e)}>
-      <option disabled value="Select a continent" className="hidden">Select a continent</option>
+      <option disabled value="Select a continent">Select a continent</option>
       {continents.map((item) => (
         <option value={item} key={item}>{item}</option>
       ))}

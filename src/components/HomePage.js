@@ -4,8 +4,8 @@ import Countries from './Countries';
 
 const HomePage = () => (
   <>
-    <ContinentPicker />
     <Map />
+    <ContinentPicker />
     <Countries />
   </>
 );

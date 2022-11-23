@@ -19,53 +19,61 @@ const CountryInfo = () => {
     } = filtered[0];
 
     return (
-      <div>
+      <div className="country-info">
         <h1>{name.official}</h1>
         <img src={flags.png} alt={`${name.common}'s Flag`} />
-        <span>
-          Capital:
-          {capital || 'N/A'}
-        </span>
-        <span>
-          Area:
-          {area || 'N/A'}
-        </span>
-        <span>
-          Population:
-          {population || 'N/A'}
-        </span>
         <div>
+          Capital:
+          <span className="bold">{capital || 'N/A'}</span>
+        </div>
+        <div>
+          {' '}
+          Area:
+          <span className="bold">
+            {`${area} km²` || 'N/A'}
+          </span>
+        </div>
+        <div>
+          Population:
+          <span className="bold">
+            {population || 'N/A'}
+          </span>
+        </div>
+        <div className="languages">
           Languages:
           {languages ? (
             <ul>
               {Object.values(languages).map((language) => (
-                <li key={language}>{language}</li>
+                <li className="bold" key={language}>
+                  {language}
+                  ,
+                </li>
               ))}
             </ul>
           ) : (
             'N/A'
           )}
         </div>
-        <div>
+        <div className="borders">
           Borders:
           {borders ? (
             <ul>
               {borders.map((border) => (
-                <li key={border}>{border}</li>
+                <li className="bold" key={border}>{border}</li>
               ))}
             </ul>
           ) : (
             'N/A'
           )}
         </div>
-        <div>
+        <div className="currencies">
           Currencies:
           {currencies ? (
             <ul>
               {Object.entries(currencies).map(([key, value]) => (
-                <li key={key}>
+                <li className="bold" key={key}>
                   {`${key}: ${value.name}`}
-                  <span>{value.symbol}</span>
+                  <span className="symbol">{value.symbol}</span>
                 </li>
               ))}
             </ul>
