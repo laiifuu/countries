@@ -25,6 +25,7 @@
   - [Run tests](#run-tests)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
+- [🙏 Acknowledgements](#acknowledgements)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [📝 License](#license)
@@ -114,6 +115,14 @@ To run tests, run the following command: `npm run test`
 
 - [ ] **Add an actual  map and display the country on it**
 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+Original design idea by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio).
+
+I also would like to thank myself.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
