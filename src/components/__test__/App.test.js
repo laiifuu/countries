@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, getByText, screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import renderWithProviders from '../../utils/testUtilities';
 import App from '../../App';
 
@@ -21,7 +21,7 @@ describe('Testing the App component', () => {
 
   it('Checking that the countries will be rendered after selecting a continent ', () => {
     const select = screen.getByTestId('select');
-    fireEvent.change(select, {target: {value: 'Africa'}});
+    fireEvent.change(select, { target: { value: 'Africa' } });
     const map = screen.getByAltText('African continent');
     expect(map.getAttribute('src')).toBe('afrique.png');
     const countriesList = screen.getByTestId('countries-list');
@@ -31,7 +31,7 @@ describe('Testing the App component', () => {
 
   it('Checking that the country info page will be rendered after selecting a country:', () => {
     const select = screen.getByTestId('select');
-    fireEvent.change(select, {target: {value: 'Africa'}});
+    fireEvent.change(select, { target: { value: 'Africa' } });
     const map = screen.getByAltText('African continent');
     expect(map.getAttribute('src')).toBe('afrique.png');
     const countriesList = screen.getByTestId('countries-list');

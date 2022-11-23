@@ -1,86 +1,86 @@
-import React from "react";
-import { render } from "@testing-library/react";
-import { Provider } from "react-redux";
-import { configureStore } from "@reduxjs/toolkit";
-import { BrowserRouter } from "react-router-dom";
-import countriesReducer from "../redux/countries/countries";
+import React from 'react';
+import { render } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
+import { BrowserRouter } from 'react-router-dom';
+import countriesReducer from '../redux/countries/countries';
 
 const rootState = {
   countries: {
-    map: "Select a continent",
+    map: 'Select a continent',
     countries: [
       {
         name: {
-          common: "Afghanistan",
-          official: "Islamic Republic of Afghanistan",
+          common: 'Afghanistan',
+          official: 'Islamic Republic of Afghanistan',
         },
         currencies: {
           AFN: {
-            name: "Afghan afghani",
-            symbol: "؋",
+            name: 'Afghan afghani',
+            symbol: '؋',
           },
         },
-        capital: ["Kabul"],
+        capital: ['Kabul'],
         languages: {
-          prs: "Dari",
-          pus: "Pashto",
-          tuk: "Turkmen",
+          prs: 'Dari',
+          pus: 'Pashto',
+          tuk: 'Turkmen',
         },
-        borders: ["IRN", "PAK", "TKM", "UZB", "TJK", "CHN"],
+        borders: ['IRN', 'PAK', 'TKM', 'UZB', 'TJK', 'CHN'],
         area: 652230,
         population: 40218234,
-        continents: ["Asia"],
+        continents: ['Asia'],
         flags: {
-          png: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_the_Taliban.svg/320px-Flag_of_the_Taliban.svg.png",
-          svg: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg",
+          png: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_the_Taliban.svg/320px-Flag_of_the_Taliban.svg.png',
+          svg: 'https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg',
         },
       },
       {
         name: {
-          common: "Albania",
-          official: "Republic of Albania",
+          common: 'Albania',
+          official: 'Republic of Albania',
         },
         currencies: {
           ALL: {
-            name: "Albanian lek",
-            symbol: "L",
+            name: 'Albanian lek',
+            symbol: 'L',
           },
         },
-        capital: ["Tirana"],
+        capital: ['Tirana'],
         languages: {
-          sqi: "Albanian",
+          sqi: 'Albanian',
         },
-        borders: ["MNE", "GRC", "MKD", "UNK"],
+        borders: ['MNE', 'GRC', 'MKD', 'UNK'],
         area: 28748,
         population: 2837743,
-        continents: ["Europe"],
+        continents: ['Europe'],
         flags: {
-          png: "https://flagcdn.com/w320/al.png",
-          svg: "https://flagcdn.com/al.svg",
+          png: 'https://flagcdn.com/w320/al.png',
+          svg: 'https://flagcdn.com/al.svg',
         },
       },
       {
         name: {
-          common: "Algeria",
+          common: 'Algeria',
           official: "People's Democratic Republic of Algeria",
         },
         currencies: {
           DZD: {
-            name: "Algerian dinar",
-            symbol: "د.ج",
+            name: 'Algerian dinar',
+            symbol: 'د.ج',
           },
         },
-        capital: ["Algiers"],
+        capital: ['Algiers'],
         languages: {
-          ara: "Arabic",
+          ara: 'Arabic',
         },
-        borders: ["TUN", "LBY", "NER", "ESH", "MRT", "MLI", "MAR"],
+        borders: ['TUN', 'LBY', 'NER', 'ESH', 'MRT', 'MLI', 'MAR'],
         area: 2381741,
         population: 44700000,
-        continents: ["Africa"],
+        continents: ['Africa'],
         flags: {
-          png: "https://flagcdn.com/w320/dz.png",
-          svg: "https://flagcdn.com/dz.svg",
+          png: 'https://flagcdn.com/w320/dz.png',
+          svg: 'https://flagcdn.com/dz.svg',
         },
       },
     ],
@@ -96,10 +96,9 @@ export default function renderWithProviders(
       preloadedState,
     }),
     ...renderOptions
-  } = {}
+  } = {},
 ) {
-  function Wrapper({ children }) {
-    /* eslint-disable-line */
+  function Wrapper({ children }) {/* eslint-disable-line */
     return (
       <BrowserRouter>
         <Provider store={store}>{children}</Provider>
