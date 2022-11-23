@@ -22,7 +22,7 @@ function compare(a, b) {
 }
 
 // Reducer
-export default function missionsReducer(state = initialState, action) {
+export default function countriesReducer(state = initialState, action) {
   switch (action.type) {
     case SET_COUNTRIES:
       return {
