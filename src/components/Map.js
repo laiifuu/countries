@@ -11,7 +11,6 @@ import worldMap from '../images/carte-du-monde.png';
 const Map = () => {
   const state = useSelector((state) => state.countries.map);
   let continent;
-
   switch (state) {
     case 'Africa':
       continent = <img src={africa} alt="African continent" />;
@@ -39,7 +38,7 @@ const Map = () => {
       break;
   }
 
-  return <div className="map">{continent}</div>;
+  return <div className="map" data-testid="map-div">{continent}</div>;
 };
 
 export default Map;

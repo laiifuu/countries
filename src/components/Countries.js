@@ -9,7 +9,7 @@ const Countries = () => {
   if (map !== 'Select a continent') if (countries.length !== 0) filtered = countries.filter((item) => item.continents[0] === map);
 
   return (
-    <ul className="countries-list">
+    <ul className="countries-list" data-testid="countries-list">
       {map === 'Select a continent'
         ? <h2>No continent selected</h2>
         : filtered.map((country) => (
