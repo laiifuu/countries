@@ -122,9 +122,8 @@ To run tests, run the following command: `npm run test`
 
 Original design idea by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio).
 
-I also would like to thank myself.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<aI also would like to thank myself. href="#readme-top">back to top</a>)</p>
 
 
 ## 🤝 Contributing <a name="contributing"></a>
@@ -141,11 +140,6 @@ Feel free to check the [issues page](../../issues/).
 
 
 Give this project a star if you like it !
-
-
-
-
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
