@@ -107,7 +107,7 @@ const About = () => (
       </ul>
     </div>
 
-    <div className='thanks-note'>Thank you for taking the time to explore this project. Your interest is truly appreciated!</div>
+    <div className="thanks-note">Thank you for taking the time to explore this project. Your interest is truly appreciated!</div>
   </div>
 );
 
