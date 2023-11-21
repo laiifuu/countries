@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 /* Box sizing rules */
 *,
 *::before,
@@ -5,8 +8,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-
-   border: solid 1px blueviolet;
 }
 
 ul {
@@ -24,11 +25,14 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-size: 1.1rem;
+  font-family: 'Noto Sans Display', sans-serif;
+  background-color: rgb(229, 255, 246);;
 }
 
 /* A elements get default styles */
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 /* Make images easier to work with */
@@ -52,9 +56,10 @@ main {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   min-height: 80vh;
+  margin-bottom: 40px;
 }
 
 header {
@@ -62,7 +67,7 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: 30px;
-  margin: 10px;
+  padding: 10px;
 }
 
 footer {
@@ -72,6 +77,23 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  border-top: 1px solid rgb(211, 211, 211);
+  font-weight: 700;
+}
+
+#continents {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  min-width: 11rem;
+  appearance: none;
+  border-radius: 4px;
+  color: white;
+  background: rgb(49, 196, 141);
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 50%;
+  border: 1px solid #dfdfdf;
 }
 
 .socials {
@@ -82,6 +104,13 @@ footer {
 .menu-nav {
   display: flex;
   gap: 10px;
+}
+
+.menu-nav > li {
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 svg {
@@ -101,50 +130,44 @@ svg {
   font-weight: 800;
 }
 
-.header-controls {
-  display: flex;
-  gap: 10px;
-}
-
-.map {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.map > img {
-  width: 80%;
-}
-
 .countries-list {
   display: flex;
-  align-items: stretch;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
+  gap: 30px;
 }
 
 .country-item {
-  width: 50%;
-  padding: 10px;
+  max-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 0px rgba(168, 168, 168, 0.7);
+  background-color: #fffffe;
 }
-
-/* .country-item:nth-of-type(4n+2) {
-}
-
-.country-item:nth-of-type(4n+3) {
-} */
 
 .country-item > a {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  height: fit-content;
+}
+
+.country-name {
+  padding: 10px;
   text-align: center;
+  border-top: 1px solid rgb(193, 192, 192) ;
 }
 
 .flag {
-  width: 150px;
-  height: 100px;
+  width: 300px;
+  height: 200px;
+  border-radius: 8px 8px 0px 0px;
+  
+}
+
+.country-info-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .country-info {
@@ -155,13 +178,32 @@ svg {
   padding: 20px;
 }
 
-.country-info > h1 {
+.info-flag {
+  border-radius: 8px;
+  box-shadow: 0px 0px 14px 0px rgba(43,43,43,0.7);
+}
+
+.country-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+/* .country-data > h2 {
   text-align: center;
+} */
+
+.data-title {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .bold {
-  font-weight: 800;
+  font-weight: 700;
   padding-left: 10px;
+  font-family: 'Ubuntu Mono', monospace;
 }
 
 .languages,
@@ -185,7 +227,78 @@ svg {
   padding-left: 10px;
 }
 
-
-@media (min-width: 576px) {
-  
+.back-button {
+  border-radius: 4px;
+  color: white;
+  background: rgb(49, 196, 141);
+  border: 1px solid #dfdfdf;
+  align-self: center;
+  padding: 5px 10px;
 }
+
+.footer-link {
+  text-decoration: underline;
+  color: green;
+  font-family: 'Ubuntu Mono', monospace;
+  font-weight: 700;
+}
+
+.about {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.p-title {
+  margin-bottom: 10px;
+}
+
+.li-title {
+  font-weight: 500;
+  color: green;
+  text-decoration: underline;
+}
+
+.thanks-note {
+  color: rgb(49, 196, 141);
+  font-weight: 700;
+  font-family: 'Ubuntu Mono', monospace;;
+}
+
+@media (min-width: 650px) {
+  .country-item {
+    width: 50%;
+  }
+
+  .menu-nav {
+    gap: 40px;
+  }
+  
+  .country-info {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1000px) {
+  .country-item {
+    width: 33%;
+  }
+
+  .info-flag {
+     width: 50%;
+  }
+}
+
+@media (min-width: 1350px) {
+  .App { 
+    width: 1350px;
+    margin: 0 auto 0 auto;
+  }
+
+  .country-item {
+    width: 25%;
+  }
+
+}
+
