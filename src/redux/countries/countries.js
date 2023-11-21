@@ -61,20 +61,23 @@ const fetchCountriesData = () => async (dispatch) => {
   await fetch(COUNTRIES_API_LINK)
     .then((result) => result.json())
     .then((res) => {
-      const countries = res.map((item) => ({
-        name: {
-          common: item.name.common,
-          official: item.name.official,
-        },
-        currencies: item.currencies,
-        capital: item.capital,
-        languages: item.languages,
-        borders: item.borders,
-        area: item.area,
-        population: item.population,
-        continents: item.continents,
-        flags: item.flags,
-      }));
+      console.log(res);
+      const countries = res.map((item) => (
+        {
+          name: {
+            common: item.name.common,
+            official: item.name.official,
+          },
+          currencies: item.currencies,
+          capital: item.capital,
+          languages: item.languages,
+          borders: item.borders,
+          area: item.area,
+          population: item.population,
+          continents: item.continents,
+          flags: item.flags,
+          gmaps: item.maps.googleMaps,
+        }));
       countries.sort(compare);
       dispatch(setCountriesAction(countries));
     });
