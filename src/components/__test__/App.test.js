@@ -9,12 +9,10 @@ describe('Testing the App component', () => {
   });
 
   it('Checking if the HomePage renders correctly ', () => {
-    const headerText = screen.getByText('Explore countries');
-    expect(headerText).toBeTruthy();
-    const homePageTxt = screen.getByText('No continent selected');
-    expect(homePageTxt).toBeTruthy();
-    const map = screen.getByTestId('map-div');
-    expect(map).toBeTruthy();
+    const homeLink = screen.getByText('HOME');
+    expect(homeLink).toBeTruthy();
+    const aboutLink = screen.getByText('ABOUT');
+    expect(aboutLink).toBeTruthy();
     const select = screen.getByText('Select a continent');
     expect(select).toBeTruthy();
   });
@@ -22,8 +20,6 @@ describe('Testing the App component', () => {
   it('Checking that the countries will be rendered after selecting a continent ', () => {
     const select = screen.getByTestId('select');
     fireEvent.change(select, { target: { value: 'Africa' } });
-    const map = screen.getByAltText('African continent');
-    expect(map.getAttribute('src')).toBe('afrique.png');
     const countriesList = screen.getByTestId('countries-list');
     expect(countriesList).toBeTruthy();
     expect(countriesList.childElementCount).toBe(1);
@@ -32,15 +28,13 @@ describe('Testing the App component', () => {
   it('Checking that the country info page will be rendered after selecting a country:', () => {
     const select = screen.getByTestId('select');
     fireEvent.change(select, { target: { value: 'Africa' } });
-    const map = screen.getByAltText('African continent');
-    expect(map.getAttribute('src')).toBe('afrique.png');
     const countriesList = screen.getByTestId('countries-list');
     expect(countriesList).toBeTruthy();
     const algerianFlag = screen.getByAltText("Algeria's Flag");
     fireEvent.click(algerianFlag);
     const name = screen.getByText("People's Democratic Republic of Algeria");
     expect(name).toBeTruthy();
-    const currency = screen.getByText('DZD: Algerian dinar');
+    const currency = screen.getByText('- DZD: Algerian dinar (د.ج)');
     expect(currency).toBeTruthy();
   });
 });
