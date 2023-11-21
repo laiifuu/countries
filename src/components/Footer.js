@@ -1,10 +1,9 @@
 const Footer = () => (
   <footer>
-    <div>
-      Made by 
-      <a href="https://hayet-fe.netlify.app/"> laiifuu</a>
-    </div>
-    <i className="fa-solid fa-heart fa-xl" />
+    Made by
+    {' '}
+    <a href="https://hayet-fe.tech/" className="footer-link" target="_blank" rel="noreferrer">laiifuu</a>
+    <i className="fa-solid fa-heart" style={{ color: 'green' }} />
   </footer>
 );
 
