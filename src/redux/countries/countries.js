@@ -61,7 +61,6 @@ const fetchCountriesData = () => async (dispatch) => {
   await fetch(COUNTRIES_API_LINK)
     .then((result) => result.json())
     .then((res) => {
-      console.log(res);
       const countries = res.map((item) => (
         {
           name: {
